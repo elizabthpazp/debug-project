@@ -1,0 +1,142 @@
+/* ========================================
+   Lista de Tareas — Estilos generales
+   ======================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 32px 28px;
+  width: 100%;
+  max-width: 520px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 24px;
+}
+
+/* Zona de ingreso */
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+#task-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#task-input:focus {
+  border-color: #6c63ff;
+}
+
+#add-btn {
+  padding: 10px 20px;
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#add-btn:hover {
+  background: #5a52d5;
+}
+
+/* Lista de tareas */
+#task-list {
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  background: #fafafa;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.task span {
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #333;
+  flex: 1;
+  user-select: none;
+}
+
+.task span:hover {
+  color: #6c63ff;
+}
+
+.task button {
+  padding: 5px 12px;
+  background: #ff5f5f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: 12px;
+}
+
+.task button:hover {
+  background: #e04444;
+}
+
+/* ----------------------------------------
+   Bug 3: el selector está mal escrito.
+   Debería ser .task.completed pero se puso
+   .task.complete — nunca va a coincidir con
+   la clase que agrega el JS ('completed').
+   ---------------------------------------- */
+.task.complete {
+  text-decoration: line-through;
+  opacity: 0.5;
+  color: #888;
+}
+
+/* Estado vacío */
+.empty-msg {
+  text-align: center;
+  color: #aaa;
+  font-size: 0.9rem;
+  padding: 20px 0;
+}
